@@ -1,0 +1,10 @@
+<div class="naviagtion-header">
+    <div><a routerLink="/" routerLinkActive="active" ariaCurrentWhenActive="page">Rent Hub</a></div>
+    <div class="naviagtion-header">
+        <div *ngIf="!isLoggedIn()"><a routerLink="/login" routerLinkActive="active" ariaCurrentWhenActive="page">Login</a></div>
+        <div *ngIf="!isLoggedIn()"><a routerLink="/register" routerLinkActive="active" ariaCurrentWhenActive="page">Register</a></div>
+        <button *ngIf="isLoggedIn()" (click)="logout()">Logout</button>
+        <div *ngIf="isLoggedIn()"><a routerLink="/create-post" routerLinkActive="active" ariaCurrentWhenActive="page">Create Post</a></div>
+
+    </div>
+</div>

@@ -1,0 +1,14 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .login-header {
+        font-size: 18px;
+        font-weight: 500;
+    }
+
+    .mat-mdc-form-field {
+        width: 600px;
+    }
+}

@@ -1,0 +1,128 @@
+<div style="margin: 20px;">
+    <div class="create-post">Create New Post</div>
+  <form *ngIf="!previewData"[formGroup]="propertyForm" (ngSubmit)="onSubmit()" class="post-container">
+    <!-- Name -->
+    <mat-form-field>
+        <mat-label>Choose your Aparment/Building</mat-label>
+        <mat-select formControlName="aparmentSelected">
+            <mat-option value="aparment">Aparment</mat-option>
+            <mat-option value="flat">Flat</mat-option>
+            <mat-option value="duplex">Duplex</mat-option>
+        </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput formControlName="name" required />
+      <mat-error *ngIf="propertyForm.get('name')?.hasError('required')">
+        Name is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Is this shared property?</mat-label>
+      <mat-select formControlName="ownerShip">
+        <mat-option value="yes">Yes</mat-option>
+        <mat-option value="no">No</mat-option>
+    </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Property Address</mat-label>
+      <input matInput formControlName="address" required />
+      <mat-error *ngIf="propertyForm.get('address')?.hasError('required')">
+        Address is required.
+      </mat-error>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="fill">
+      <mat-label>Property Rent</mat-label>
+      <input matInput formControlName="rent" required />
+      <mat-error *ngIf="propertyForm.get('rent')?.hasError('required')">
+        Rent is required.
+      </mat-error>
+    </mat-form-field>
+
+     <mat-form-field appearance="fill">
+      <mat-label>Is the room apartment is furnished?</mat-label>
+      <mat-select formControlName="furnishedDetail">
+        <mat-option value="yes">Yes</mat-option>
+        <mat-option value="no">No</mat-option>
+    </mat-select>
+    </mat-form-field>
+    <mat-form-field>
+        <mat-label>Enter your Email</mat-label>
+        <input
+        matInput
+        placeholder="pat@example.com"
+        formControlName="contactInfo"
+        required
+        />
+    </mat-form-field>
+        <!-- <div formArrayName="amenities">
+        <mat-label>Amenities</mat-label>
+        <h4>Select your toppings:</h4>
+        <div *ngFor="let amenity of amenities; let i = index">
+            <p><mat-checkbox [formControlName]=i
+                (change)="onAmenityChange($event)"
+                >{{amenity}}
+            </mat-checkbox></p>
+        </div>
+    </div> -->
+
+
+   
+    <mat-form-field appearance="fill">
+      <mat-label>Title</mat-label>
+      <input matInput formControlName="title" required />
+      <mat-error *ngIf="propertyForm.get('title')?.hasError('required')">
+        title is required.
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field>
+    <mat-label>Description</mat-label>
+    <textarea matInput formControlName="description" ></textarea>
+    </mat-form-field>
+
+
+
+
+    <div formGroupName="amenities">
+        <label>Amenities:</label>
+        <div *ngFor="let amenity of amenitiesList">
+        <p><mat-checkbox 
+            [formControlName]="amenity.toLowerCase()">
+            {{amenity}}
+            </mat-checkbox>
+        </p>
+        </div>
+    </div>
+
+   
+    <button type="button" [disabled]="propertyForm.invalid"(click)="previewForm()">Preview</button>
+
+    <button mat-raised-button type="submit" [disabled]="propertyForm.invalid">
+      Submit
+    </button>
+  </form>
+
+  <div *ngIf="previewData" class="preview">
+    <h3>Preview</h3>
+    <p><strong>Name:</strong> {{ previewData?.name }}</p>
+    <p><strong>Description:</strong> {{ previewData?.description }}</p>
+    <p><strong>Aparment Selected:</strong> {{ previewData?.aparmentSelected }}</p>
+    <p><strong>Is this shared property?</strong> {{ previewData?.ownerShip }}</p>
+    <p><strong>Is the room apartment is furnished?</strong> {{ previewData?.furnishedDetail }}</p>
+    <p><strong>Address</strong> {{ previewData?.address }}</p>
+    <p><strong>Property Rent</strong> {{ previewData?.rent }}</p>
+    <p><strong>Contact Info</strong> {{ previewData?.contactInfo }}</p>
+    <p><strong>Title</strong> {{ previewData?.title }}</p>
+    <p><strong></strong> {{ previewData }}</p>
+
+    <button  mat-raised-button (click)="onSubmit()">Confirm Submit</button>
+    <button  mat-raised-button (click)="clearPreview()">Edit Form</button>
+  </div>
+</div>

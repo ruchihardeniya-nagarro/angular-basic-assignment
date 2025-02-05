@@ -1,0 +1,15 @@
+.naviagtion-header {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    justify-content: space-between;
+    -webkit-box-shadow: 0 4px 6px -6px #222;
+    -moz-box-shadow: 0 4px 6px -6px #222;
+    box-shadow: 0 4px 6px -6px #222;
+
+    a {
+        text-decoration: none;
+        font-size: 16px;
+        margin: 10px;
+    }
+}

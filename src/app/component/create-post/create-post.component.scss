@@ -1,0 +1,12 @@
+.post-container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    border: 1px solid;
+}
+
+.create-post {
+    font-size: 18px;
+    font-weight: 500;
+    margin: 25px 0px;
+}

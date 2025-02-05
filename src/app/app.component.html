@@ -1,4 +1,5 @@
 
 <!-- The routed views render in the <router-outlet>-->
-<app-navigation></app-navigation>
+<app-navigation *ngIf="showHead"></app-navigation>
 <router-outlet></router-outlet>
+

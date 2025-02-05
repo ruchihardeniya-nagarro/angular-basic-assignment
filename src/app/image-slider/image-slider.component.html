@@ -1,0 +1,8 @@
+<div class="slider-container">
+  <button class="prev-btn" (click)="prevImage()">&#10094;</button>
+  
+  <div class="slider" *ngIf="apartmentImages">
+    <img [src]="apartmentImages[currentIndex]" alt="Image slider" />
+  </div>
+  <button class="next-btn" (click)="nextImage()">&#10095;</button>
+</div>
