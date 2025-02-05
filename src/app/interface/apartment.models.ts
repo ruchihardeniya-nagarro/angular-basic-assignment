@@ -1,11 +1,12 @@
 export interface apartment{
-    id: number,
+    id: number|string,
     title:string,
     description:string,
     photos:Array<any>
     img:string,
     rentalTerms:string,
     contactInfo:string,
-    comments:Array<string>,
-    interestedUsers:Array<string>
+    comments:Array<any>,
+    interestedUsers: Array<string>,
+    furnishedDetail?:string
 }

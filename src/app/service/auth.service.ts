@@ -18,8 +18,8 @@ export class AuthService {
   constructor(private http: HttpClient, private router: Router) {}
 
   // Registration method
-  register(username: string, password: string,role:string): Observable<any> {
-    return this.http.post<any>(this.apiUrl, { username, password,role });
+  register(username: string, password: string,role:string,favorites:Array<any>): Observable<any> {
+    return this.http.post<any>(this.apiUrl, { username, password,role,favorites });
   }
 
   // Login method
@@ -79,4 +79,5 @@ export class AuthService {
    isAuthenticated(): boolean {
     return this.authenticate.value;
   }
+  
 }

@@ -31,14 +31,15 @@ export class RegisterComponent implements OnInit{
       username: ['', [Validators.required,]],  // Username validation
       password: ['', [Validators.required]],  // Password validation
       role: ['', [Validators.required]],  // Role validation
-
+      favorites:['']
     });
   }
    onSubmit(): void {
     if (this.registerForm.valid) {
-      const { username, password,role } = this.registerForm.value;
+      const { username, password, role } = this.registerForm.value;
+      let favorites: any[] = [];
 
-      this.authService.register(username, password,role).subscribe({
+      this.authService.register(username, password,role,favorites).subscribe({
         next: () => {
           this.router.navigate(['/login']);
         },

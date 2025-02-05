@@ -1,3 +1,42 @@
 .detail-card {
     width: 700px;
 }
+
+.apartment-detail-container {
+    display: flex;
+    flex-direction: row;
+
+    .highliter-apartment {
+        border: 2px solid #dadada;
+        border-radius: 7px;
+    }
+
+    .highlight-text {
+        background-color: HotPink;
+    }
+
+    .added-comment-section {
+        margin: 20px;
+    }
+
+    .detail-container {
+        margin: 20px;
+    }
+
+    .apartment-card {
+        p {
+            padding: 5px;
+            margin: 5px;
+        }
+    }
+
+    .form-layout {
+        display: flex;
+        flex-direction: column;
+
+        .post-button {
+            width: 200px;
+        }
+    }
+
+}

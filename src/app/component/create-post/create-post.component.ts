@@ -42,8 +42,6 @@ export class CreatePostComponent implements OnInit{
         laundry: [false],
       }),
     });
-        // this.addAmenitiesControls();
-
   }
 
   // Toggle checkbox selections
@@ -87,7 +85,7 @@ export class CreatePostComponent implements OnInit{
         next: () => {
           this.propertyForm.reset(this.propertyForm.value);
           this.router.navigate(['/']);
-          alert("Post Created Successfully")
+          alert("Post Created Successfully");
         },
         error: (err) => {
           alert("post not created")
