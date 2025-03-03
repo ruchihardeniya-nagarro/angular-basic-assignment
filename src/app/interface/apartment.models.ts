@@ -8,5 +8,7 @@ export interface apartment{
     contactInfo:string,
     comments:Array<any>,
     interestedUsers: Array<string>,
-    furnishedDetail?:string
+    furnishedDetail?: string,
+    address?: string,
+    aparmentSelected?:string
 }

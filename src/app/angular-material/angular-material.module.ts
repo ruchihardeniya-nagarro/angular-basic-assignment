@@ -21,7 +21,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatSelectModule,
     MatCardModule,
     MatRadioModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatFormFieldModule, MatSelectModule, MatInputModule
   ] ,
   exports:[
     

@@ -3,7 +3,6 @@
   <p *ngIf="isFav" class="highlight-text">This item added in Favorite</p>
     <mat-card class="detail-card"  appearance="outlined">
       <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
         <mat-card-title>{{apartmentDetail?.title}}</mat-card-title>
         <mat-card-subtitle>{{apartmentDetail?.description}}</mat-card-subtitle>
       </mat-card-header>
@@ -11,6 +10,9 @@
       <p>Rental Terms:{{apartmentDetail?.rentalTerms}}</p>
       <p>Contact Info: {{apartmentDetail?.contactInfo}}</p>
       <p>Is Apartment is Furnished: {{apartmentDetail?.furnishedDetail}}</p>
+      <p> Apartment Address: {{apartmentDetail?.address}}</p>
+      <p>Apartment Type: {{apartmentDetail?.aparmentSelected}}</p>
+
       <!-- <mat-card-actions>
         <button mat-button *ngIf="isLoggedIn&&!isFav"(click)="addToFavorites()">Add To Favorite</button>
         <ng-container >

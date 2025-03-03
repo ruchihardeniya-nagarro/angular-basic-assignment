@@ -28,3 +28,6 @@ Can use login cred:
 or can create new user by clicking on regiter from header.
 
 
+## Git Hub Link for Project 
+https://github.com/ruchihardeniya-nagarro/angular-basic-assignment.git
+Please use dev branch 

@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { CommonModule } from '@angular/common';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 
 @Component({
   selector: 'app-navigation',
-  imports: [ RouterLink, RouterLinkActive,CommonModule],
+  imports: [ RouterLink, RouterLinkActive,CommonModule,AngularMaterialModule],
   providers:[AuthService],
   templateUrl: './navigation.component.html',
   styleUrl: './navigation.component.scss'

@@ -107,7 +107,10 @@ export class ApartmentDetailService {
   getUpdatedUser() { 
     return localStorage.getItem("updatedUser")
   }
-
+  searchApartmentByArea(address: string): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}?address=${address}`);
+  }
+  
 
 }
 

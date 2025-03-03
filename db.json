@@ -4,6 +4,7 @@
       "id": "1",
       "title": "Cozy 1-Bedroom Apartment",
       "description": "A lovely 1-bedroom apartment in the city center.",
+      "address": "Maharana Pratap",
       "photos": [
         "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQaFCq5vtn_yq9ZAu3lV0dS-PFR7YQhCrfzQ&s",
         "data:image/jpeg;base64,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",
@@ -45,6 +46,7 @@
       "img": "https://res.cloudinary.com/stanza-living/image/upload/f_auto,q_auto/e_improve/e_sharpen:10/e_saturation:10/f_auto,q_auto/v1650364826/Website/CMS-Uploads/tq2twfiwfxmvxvpnnm90.jpg",
       "rentalTerms": "24-month lease",
       "contactInfo": "rohit@example.com",
+      "address": "51-Soumya",
       "comments": [
         {
           "id": 1,
@@ -65,6 +67,7 @@
       ],
       "img": "https://res.cloudinary.com/stanza-living/image/upload/f_auto,q_auto/e_improve/e_sharpen:10/e_saturation:10/f_auto,q_auto/v1646636827/Website/CMS-Uploads/tkjoum8smsziwjwqzuzt.jpg",
       "rentalTerms": "24-month lease",
+      "address": "Arera Colony",
       "contactInfo": "rohit@example.com",
       "comments": [],
       "interestedUsers": []
@@ -134,8 +137,7 @@
       "password": "password1",
       "role": "renter",
       "favorites": [
-        "7230",
-        "88"
+        "1"
       ]
     },
     {

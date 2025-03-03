@@ -3,6 +3,9 @@
         <p class="home-page-header">All Available Apartment</p>
     </div>
 
+  <input [(ngModel)]="filterText" (keyup)="onChange()"placeholder="Search location" />
+  <button (click)="onChange()">Search</button>
+  <button (click)="clearSearch()">Clear</button>
     <div class="apartment-container">
         <mat-card class="apartment-card" appearance="outlined">
             <mat-card-header>
@@ -12,7 +15,8 @@
             <app-image-slider [apartmentImages]="latestAddedApartment?.photos"></app-image-slider>
             <mat-card-actions>
                 <button mat-button (click)="viewDetailClicked(latestAddedApartment?.id)">View Detail</button>
-                <button mat-button *ngIf="isLoggedIn&&!isApartmentAddedToFavorite(latestAddedApartment.id)" (click)="addToFavorites(latestAddedApartment?.id)">Add To
+                <button mat-button *ngIf="isLoggedIn&&!isApartmentAddedToFavorite(latestAddedApartment.id)"
+                    (click)="addToFavorites(latestAddedApartment?.id)">Add To
                     Favorite</button>
                 <ng-container>
                     <button mat-button *ngIf="isLoggedIn&&isApartmentAddedToFavorite(latestAddedApartment.id)"

@@ -11,9 +11,11 @@ import { Router } from '@angular/router';
 import { AuthService } from '../service/auth.service';
 import { UserService } from '../service/user.service';
 import { User } from '../interface/user.models';
+import { FormsModule } from '@angular/forms';
+import { AngularMaterialModule } from '../angular-material/angular-material.module';
 @Component({
   selector: 'app-home',
-  imports: [HttpClientModule, MatCardModule, MatButtonModule, CommonModule, ImageSliderComponent],
+  imports: [HttpClientModule, MatCardModule, MatButtonModule, CommonModule, ImageSliderComponent,FormsModule,AngularMaterialModule],
   providers: [ApartmentDetailService],
   templateUrl: './home.component.html',
   styleUrl: './home.component.scss'
@@ -23,6 +25,9 @@ export class HomeComponent implements OnInit {
   latestAddedApartment: any = {};
   isFav: boolean | undefined;
   isLoggedIn: boolean | undefined;
+  filterText: string | undefined;
+  filteredApartments : any[] = [];
+  searchList: string[] = ['address', 'Mushroom', 'Onion', 'Pepperoni', 'Sausage', 'Tomato'];
 
   constructor(
     private apartService: ApartmentDetailService,
@@ -39,12 +44,31 @@ export class HomeComponent implements OnInit {
     this.isLoggedIn = this.authService.isAuthenticated()
     this.getUserData()
   }
-
+ 
   getApartmentList() {
     this.apartService.getApartments().subscribe((data) => {
       this.apartments = data;
       this.latestAddedApartment = data ? data[0] : [];
+      this.filteredApartments = data;
     })
+  }
+
+  onChange() {
+    console.log("filterText",this.filterText)
+    if (this.filterText) {
+      this.apartService.searchApartmentByArea(this.filterText).subscribe(apartments => {
+        this.apartments = apartments;
+        this.latestAddedApartment =  [];
+      });
+    } else {
+      this.getApartmentList(); // If no search query, show all authors
+    }
+  }
+
+  clearSearch() { 
+    this.filterText = "";
+    this.getApartmentList(); // If no search query, show all authors
+
   }
 
   getItemPairs(arr: any[]) {
